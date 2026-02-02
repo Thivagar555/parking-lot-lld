@@ -28,6 +28,20 @@ public class ParkingFloor {
         }
         return null;
     }
+    public String getSpot(String vehicleNumber)
+    {
+        for(ParkingSpot spot : parkingSpots)
+        {
+            if(!spot.isFree())
+            {
+                if(spot.getParkedVehicle().getVehicleNumber().equalsIgnoreCase(vehicleNumber))
+                {
+                    return spot.getSpotId();
+                }
+            }
+        }
+        return null;
+    }
     public boolean parkVehicle(Vehicle vehicle) {
         ParkingSpot parkingSpot = getAvailableSpot(vehicle.getVehicleType());
         if(parkingSpot == null) {
