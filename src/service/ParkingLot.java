@@ -17,7 +17,7 @@ public class ParkingLot {
         private static class Helper {
             public static final ParkingLot Instance =  new ParkingLot();
         }
-        public ParkingLot getInstance()
+        public static ParkingLot getInstance()
         {
             return Helper.Instance;
         }
@@ -81,7 +81,7 @@ public class ParkingLot {
         if (pricingStrategy == null) {
             throw new IllegalStateException("Invalid pricingStrategy");
         }
-        return pricingStrategy.calculateFee(time);
+        return pricingStrategy.calculatePrice(time);
     }
     public void addObserver(Observer observer) {
         this.observers.add(observer);

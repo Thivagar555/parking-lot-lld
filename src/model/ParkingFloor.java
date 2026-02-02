@@ -47,4 +47,20 @@ public class ParkingFloor {
         }
         return false;
     }
+    public void displayAvailableSpots() {
+
+        boolean hasFreeSpots = false;
+
+        for (ParkingSpot spot : parkingSpots) {
+            if (spot.isFree()) {
+                hasFreeSpots = true;
+                spot.display();   // 👈 delegated to ParkingSpot
+            }
+        }
+
+        if (!hasFreeSpots) {
+            System.out.println("No available spots on floor " + floorId);
+        }
+    }
+
 }

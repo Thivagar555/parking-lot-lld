@@ -40,4 +40,11 @@ public class ParkingSpot {
         this.parkedVehicle = null;
         isFree = true;
     }
+    public void display() {
+        System.out.println(
+                "Spot ID: " + spotId +
+                        " | Type: " + supportedvehicleType
+        );
+    }
+
 }
